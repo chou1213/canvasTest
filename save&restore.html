@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./assets/common.css" />
+</head>
+
+<body>
+  <div class="canvas"></div>
+  <div class="left">
+    <div>
+      save() 和restore()对应使用<br />
+      save() 保存状态<br />
+      restore() 恢复状态<br />
+    </div>
+    <form>
+      <textarea id="code" class="playable-code" rows="3" cols="80">
+              ctx.fillStyle = "green";
+              ctx.fillRect(10, 10, 10, 10);
+              ctx.fillRect(30, 20, 10, 10);
+          </textarea>
+        <input type="button" value="run" />
+    </form>
+
+    <form>
+      <textarea id="code" class="playable-code" rows="5" cols="80">
+            ctx.save();
+            ctx.fillStyle = "green";
+            ctx.fillRect(10, 10, 10, 10);
+            ctx.restore();
+            ctx.fillRect(60, 20, 10, 10);
+          </textarea>
+        <input type="button" value="run" />
+    </form>
+
+    <form>
+      <textarea id="code" class="playable-code" rows="7" cols="80">
+              ctx.save();//保存默认的黑色
+              ctx.fillStyle = "green";
+              ctx.fillRect(10, 10, 10, 10);
+              ctx.fillStyle = 'red';
+              ctx.fillRect(20, 20, 10, 10);
+              ctx.restore();//只弹出绘制栈顶的状态，就是刚刚保存的黑色
+              ctx.fillRect(60, 20, 10, 10);
+            </textarea>
+        <input type="button" value="run" />
+    </form>
+  </div>
+
+
+  <script src='./assets/common.js'></script>
+</body>
+
+</html>

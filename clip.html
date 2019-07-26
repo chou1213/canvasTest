@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./assets/common.css" />
+</head>
+
+<body>
+  <div class="canvas"></div>
+  <div class="left">
+    <div>
+      将当前创建的路径设置为当前剪切路径的方法<br />
+    </div>
+    <form>
+      <textarea id="code" class="playable-code" rows="3" cols="80">
+          ctx.arc(100, 100, 75, 0, Math.PI*2, false);
+          ctx.clip();
+          ctx.fillRect(0, 0, 100,100);
+      </textarea>
+        <input type="button" value="run" />
+    </form>
+  </div>
+  <script src='./assets/common.js'></script>
+</body>
+
+</html>
